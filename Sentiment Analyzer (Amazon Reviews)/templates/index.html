@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sentiment Analyzer</title>
+
+<style>
+body{
+    font-family: Arial;
+    background: linear-gradient(135deg,#1e3c72,#2a5298);
+    color:white;
+    text-align:center;
+    padding:50px;
+}
+
+.container{
+    background:white;
+    color:black;
+    padding:30px;
+    border-radius:15px;
+    width:400px;
+    margin:auto;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+textarea{
+    width:100%;
+    height:100px;
+    border-radius:10px;
+    padding:10px;
+    border:1px solid #ccc;
+}
+
+button{
+    margin-top:15px;
+    padding:10px 20px;
+    border:none;
+    border-radius:10px;
+    background:#2a5298;
+    color:white;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1e3c72;
+}
+
+.result{
+    margin-top:20px;
+    font-size:20px;
+    font-weight:bold;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+<h2>Amazon Review Sentiment</h2>
+
+<form action="/predict" method="post">
+<textarea name="review" placeholder="Enter your review..."></textarea>
+<br>
+<button type="submit">Analyze</button>
+</form>
+
+{% if prediction %}
+<div class="result">
+Result: {{ prediction }}
+</div>
+{% endif %}
+
+</div>
+
+</body>
+</html>
+s
